@@ -333,6 +333,13 @@ def create_directory_structure(base_path: str, structure: Dict[str, Any]) -> Non
     
     logger.info(f"Directory structure created at {base_path}")
 
+def calculate_statistics(data):
+    """Calculate basic statistics for dataset."""
+    return {
+        'mean': data.mean(),
+        'std': data.std(),
+        'count': len(data)
+    }
 
 def log_experiment(experiment_name: str, params: Dict[str, Any], 
                   metrics: Dict[str, float], model_path: str = None) -> None:
